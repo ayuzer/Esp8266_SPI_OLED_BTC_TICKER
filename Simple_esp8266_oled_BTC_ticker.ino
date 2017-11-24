@@ -17,8 +17,8 @@
 // SPI OLED
 Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 
-const char* ssid = "BlackPanther";
-const char* password = "ladyluck";
+const char* ssid = "your ssid";
+const char* password = "your password";
 
 //coindesk btc api (canadian price)
 const String fullurl = "http://api.coindesk.com/v1/bpi/currentprice/CAD";
@@ -102,7 +102,8 @@ CADprice = round(CADprice);
       display.display();
         delay(5000); 
  display.clearDisplay();
-    display.setCursor(0, 0);
+  
+    display.setCursor(0, 0); //alternate to show time every 5 sec
      display.setTextSize(1);
      display.setTextWrap(0);
      display.setTextColor(WHITE);
@@ -115,9 +116,6 @@ CADprice = round(CADprice);
     display.print("CAD = $");
   display.println(CADprice);
       display.display();
-        delay(5000); //alternate to show time every 5 sec
-  
-  
-  
+        delay(5000);
 
 }
